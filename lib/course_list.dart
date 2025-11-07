@@ -2,23 +2,33 @@ import 'model/course_model.dart';
 
 final List<Course> courses = [
   Course(
-      courseName: 'Flutter & Dart - The Complete Guide',
-      year: '2023',
-      platform: 'Udemy',
-      certificateImage: 'assets/images/udemy.jpg',
-      verificationLink: 'https://www.udemy.com/certificate/UC-12345678-1234-1234-1234-123456789012/'),
+    courseName: 'Generative AI: Turbocharge Mobile App Development',
+    year: '2025',
+    issuer: 'SkillUp',
+    certificateFilePath: 'assets/images/generative_ai_turbocharge.jpg',
+  ),
   Course(
-      courseName: 'React - The Complete Guide',
-      year: '2022',
-      platform: 'Coursera',
-      certificateImage: 'assets/images/udemy.jpg',
-      verificationLink:
-          'https://www.coursera.org/account/accomplishments/certificate/1234567890'),
+      courseName: 'LLM Fine-Tuning and Customization Training',
+      year: '2025',
+      issuer: 'simplilearn',
+      certificateFilePath: 'assets/images/llm_fine_tuning.jpg',
+      ),
   Course(
-    courseName: 'Vue - The Complete Guide',
-    year: '2021',
-    platform: 'Udemy',
-    certificateImage: 'assets/images/dummy.pdf',
-    verificationLink: 'https://www.udemy.com/certificate/UC-12345678-1234-1234-1234-123456789012/',
+      courseName: 'Generative AI: Prompt Engineering Basics',
+      year: '2025',
+      issuer: 'IBM',
+      certificateFilePath: 'assets/images/prompt_engineering_basics.jpg',
+      ),
+  Course(
+    courseName: 'Introduction to Software Engineering',
+    year: '2025',
+    issuer: 'IBM',
+    certificateFilePath: 'assets/images/software_engineering.jpg',
+  ),
+  Course(
+    courseName: 'Flutter Shop App | State Management BLoC',
+    year: '2024',
+    issuer: 'Udemy',
+    certificateFilePath: 'assets/images/udemy.jpg',
   ),
 ];
