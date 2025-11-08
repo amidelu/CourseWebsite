@@ -1,4 +1,4 @@
-import 'package:course_website/course_list.dart';
+import 'package:course_website/features/courses/course_list.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/course_list_item.dart';
@@ -11,11 +11,12 @@ class CourseListPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
-        title: const Text('Courses List (Mohammad Delowar Hossain)'),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48.0),
-          child: Container(
-            color: Colors.blue,
+        title: const Text('Courses'),
+      ),
+      body: Column(
+        children: [
+          Container(
+            color: Colors.teal,
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Row(
@@ -26,14 +27,16 @@ class CourseListPage extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
-      body: ListView.builder(
-        itemCount: courses.length,
-        itemBuilder: (context, index) {
-          final course = courses[index];
-          return CourseListItem(course: course);
-        },
+          Expanded(
+            child: ListView.builder(
+              itemCount: courses.length,
+              itemBuilder: (context, index) {
+                final course = courses[index];
+                return CourseListItem(course: course);
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

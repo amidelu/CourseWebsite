@@ -1,9 +1,8 @@
-import 'package:course_website/model/course_model.dart';
 import 'package:flutter/material.dart';
+import '../../model/course_model.dart';
 
 class CourseListItem extends StatelessWidget {
   final Course course;
-
   const CourseListItem({super.key, required this.course});
 
   @override
