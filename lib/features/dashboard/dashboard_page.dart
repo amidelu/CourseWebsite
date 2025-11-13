@@ -13,8 +13,8 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   int selectedIndex = 0;
   final List<Widget> _bodyPage = [
-    const CourseListPage(),
     const ProjectsPage(),
+    const CourseListPage(),
   ];
 
   @override
@@ -42,9 +42,12 @@ class _DashboardPageState extends State<DashboardPage> {
                           Text('Mohammad Delowar Hossain', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                           Text('+880 1616502240 (Whatsapp)'),
                           const SizedBox(height: 4),
-                          GestureDetector(
-                              onTap: () => openUrl('https://github.com/amidelu'),
-                              child: Text('https://github.com/amidelu'),
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                                onTap: () => openUrl('https://github.com/amidelu'),
+                                child: Text('https://github.com/amidelu'),
+                            ),
                           ),
                         ],
                       ),
@@ -64,15 +67,15 @@ class _DashboardPageState extends State<DashboardPage> {
             },
             destinations: const <NavigationRailDestination>[
               NavigationRailDestination(
-                icon: Icon(Icons.list_outlined),
-                selectedIcon: Icon(Icons.list),
-                label: Text('Courses', style: TextStyle(fontSize: 16, color: Colors.white),),
-                padding: EdgeInsets.all(10),
-              ),
-              NavigationRailDestination(
                 icon: Icon(Icons.list_alt_outlined),
                 selectedIcon: Icon(Icons.list_alt),
                 label: Text('Projects', style: TextStyle(fontSize: 16, color: Colors.white),),
+                padding: EdgeInsets.all(10),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.list_outlined),
+                selectedIcon: Icon(Icons.list),
+                label: Text('Courses', style: TextStyle(fontSize: 16, color: Colors.white),),
                 padding: EdgeInsets.all(10),
               ),
             ],

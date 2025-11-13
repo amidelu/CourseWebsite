@@ -2,8 +2,6 @@ import 'package:course_website/features/projects/projects_list.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// (Assuming Project class is defined as above)
-
 class ProjectsTable extends StatelessWidget {
   const ProjectsTable({super.key});
   Future<void> openUrl(String url) async {
@@ -84,14 +82,25 @@ class ProjectsTable extends StatelessWidget {
   }
 
   // Helper function to build the Text widget inside a DataCell
-  Widget _buildCellText(String text, double width, {bool? tapEnabled = false}) {
-    return GestureDetector(
-      onTap: () {
-        tapEnabled == true ? openUrl(text) : null;
-      },
-      child: SizedBox(
-        width: width,
-        child: Text(text, maxLines: 4, overflow: TextOverflow.ellipsis),
+  Widget _buildCellText(String text, double width, {bool tapEnabled = false}) {
+    final textWidget = SizedBox(
+      width: width,
+      child: Text(
+        text,
+        maxLines: 4,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
+
+    // When tapEnabled is false → return plain text
+    if (!tapEnabled) return textWidget;
+
+    // When tapEnabled is true → add cursor + click behavior
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () => openUrl(text),
+        child: textWidget,
       ),
     );
   }

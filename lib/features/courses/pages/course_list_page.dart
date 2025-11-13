@@ -18,7 +18,7 @@ class CourseListPage extends StatelessWidget {
           Container(
             color: Colors.teal,
             child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 18.0),
               child: Row(
                 children: [
                   Expanded(child: Text('Details', textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
